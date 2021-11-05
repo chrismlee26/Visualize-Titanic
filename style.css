@@ -1,1 +1,18 @@
+:root {
+  /* background-color: #555; */
+}
 
+#titanic {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.sort,
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+/* CSS Variables for color */
+/* Background color, opacity, width/hight, border-radius, border-width, color, style */

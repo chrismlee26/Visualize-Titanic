@@ -1,5 +1,13 @@
 :root {
-  /* background-color: #555; */
+  background-color: #555;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
 }
 
 #titanic {
@@ -14,5 +22,12 @@
   justify-content: center;
 }
 
+#dataDisplay {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
 /* CSS Variables for color */
 /* Background color, opacity, width/hight, border-radius, border-width, color, style */

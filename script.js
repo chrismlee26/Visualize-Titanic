@@ -3,6 +3,9 @@ import data from './titanic-data.js'
 // Get a reference to the #titanic
 const titanic = document.querySelector('#titanic')
 
+// Get a reference to the #titanic
+const displayData = document.querySelector('#data')
+
 // Set some styles on the titanic
 // display flex, justifyContent center, alignItems flex-end
 titanic.style.display = 'grid'
@@ -21,8 +24,7 @@ passengers.forEach((p, i) => {
   const { pclass, survived } = data[i].fields
   p.style.width = '30px'
   p.style.height = '30px'
-  p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
-  // p.style.backgroundColor = '#000'
+  p.style.opacity = survived === 'Yes' ? '100%' : '15%' 
   p.style.borderRadius = data[i].fields.sex === 'female' ? '50%' : '0'
   const portColor = { S: "tomato", C: "cornflowerblue", Q: "orange", undefined: "green" }
   p.style.backgroundColor = portColor[data[i].fields.embarked]

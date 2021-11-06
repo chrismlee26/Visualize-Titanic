@@ -1,7 +1,13 @@
 import data from './titanic-data.js'
 
 // Color variables for 'Embarked' data
-const portColor = { S: "tomato", C: "cornflowerblue", Q: "orange", undefined: "green" }
+const portColor = { 
+  S: "tomato", 
+  C: "cornflowerblue", 
+  Q: "orange", 
+  undefined: "green",
+  total: 'gray'
+}
 
 // Get a reference to the #titanic
 const titanic = document.querySelector('#titanic');
@@ -62,20 +68,33 @@ const embarkedCounts = data.reduce((acc, p) => {
   return acc
 }, {});
 
+// Bar Total
+embarkedCounts.total = data.length
+
 // Bar Chart
 const embarkedKeys = Object.keys(embarkedCounts)
+
+// Bar Chart
 embarkedKeys.forEach((e) => {
   const el = document.createElement('div')
   titanicEmbarked.appendChild(el)
   el.style.width = '30px'
-  el.style.height = `${embarkedCounts[e]}px`
+  const count = embarkedCounts[e]
+  const percent = count / data.length * 100
+  el.style.height = `${percent}%`
   el.style.backgroundColor = portColor[e]
+  el.style.margin = '1px'
 });
 
 titanicEmbarked.style.display = 'flex';
-titanicEmbarked.style.position = 'fixed'
-titanicEmbarked.style.left = '1%';
-titanicEmbarked.style.top = '6%';
+// titanicEmbarked.style.flexDirection = 'column';
+titanicEmbarked.style.alignItems = 'flex-end';
+// titanicEmbarked.style.position = 'fixed'
+// titanicEmbarked.style.left = '1%';
+// titanicEmbarked.style.top = '6%';
+titanicEmbarked.style.border = '1px solid white';
+titanicEmbarked.style.width = '200px';
+titanicEmbarked.style.height = '300px';
 
 // Main Diagram 
 passengers.forEach((p, i) => {

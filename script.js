@@ -22,8 +22,15 @@ passengers.forEach((p, i) => {
   p.style.width = '30px'
   p.style.height = '30px'
   p.style.opacity = survived === 'Yes' ? '100%' : '50%' 
-  p.style.backgroundColor = '#000'
+  // p.style.backgroundColor = '#000'
+  p.style.borderRadius = data[i].fields.sex === 'female' ? '50%' : '0'
+  const portColor = { S: "tomato", C: "cornflowerblue", Q: "orange", undefined: "green" }
+  p.style.backgroundColor = portColor[data[i].fields.embarked]
 })
+
+
+
+
 
 // Challenges - 
 

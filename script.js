@@ -84,6 +84,13 @@ titanicEmbarked.style.border = '1px dotted white';
 titanicEmbarked.style.width = '200px';
 titanicEmbarked.style.height = '300px';
 
+// Reset Diagram
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('#reset')) {
+    document.location.reload(true)
+  }
+})
+
 // Sort Survived
 document.body.addEventListener('click', (e) => {
   if (e.target.matches('#sortSurvived')) {
@@ -124,3 +131,49 @@ document.body.addEventListener('click', (e) => {
     drawDiagram()
   }
 });
+
+// Sort by Age
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('#sortAge')) {
+    data.sort((a, b) => {
+      if (a.fields.age < b.fields.age) {
+        return -1
+      } else if (a.fields.age > b.fields.age) {
+        return 1
+      }
+      return 0
+    });
+    drawDiagram()
+  }
+});
+
+// Sort by Class
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('#sortClass')) {
+    data.sort((a, b) => {
+      if (a.fields.pclass < b.fields.pclass) {
+        return -1
+      } else if (a.fields.pclass > b.fields.pclass) {
+        return 1
+      }
+      return 0
+    });
+    drawDiagram()
+  }
+});
+
+// Sort by Fare
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('#sortFare')) {
+    data.sort((a, b) => {
+      if (a.fields.fare < b.fields.fare) {
+        return -1
+      } else if (a.fields.fare > b.fields.fare) {
+        return 1
+      }
+      return 0
+    });
+    drawDiagram()
+  }
+});
+
